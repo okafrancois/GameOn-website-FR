@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet"/>
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
-    </div>
-    <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+    <header class="main-header">
+      <div class="main-header__logo header-logo">
+        <img alt="logo" src="img/Logo.png"/>
+      </div>
+      <nav class="main-header__nav navigation">
+          <a href="#" class="navigation__link --active"><span>Détails de l'évènement</span></a>
+          <a href="#" class="navigation__link"><span>À propos</span></a>
+          <a href="#" class="navigation__link"><span>Contact</span></a>
+          <a href="#" class="navigation__link"><span>Évènements passés</span></a>
+      </nav>
+      <div class="menu-toggle" onclick="editNav()">
         <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    </div>
-  </div>
+      </div>
+    </header>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -45,7 +39,7 @@
           </button>
         </div>
         <div class="hero-img">
-          <img src="./bg_img.jpg" alt="img" />
+          <img src="img/bg_img.jpg" alt="img" />
         </div>
         <button class="btn-signup modal-btn">
           je m'inscris
@@ -215,6 +209,6 @@
         Copyright 2014 - 2022, GameOn Inc.
       </p>
     </footer>
-    <script src="modal.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

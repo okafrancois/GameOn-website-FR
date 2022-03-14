@@ -1,0 +1,37 @@
+@use '../utils/variables' as *;
+
+/*
+  Index
+  ---------- ---------- ---------- ---------- ----------
+  • Base
+  • Base  --primary
+*/
+
+/*
+  • Base
+  ---------- ---------- ---------- ---------- ----------
+*/
+
+.button {
+  background: #C3C3C3;
+  margin-top: 0.5em;
+  padding: 1em;
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/*
+  • Base --primary
+  ---------- ---------- ---------- ---------- ----------
+*/
+
+.button {
+  background: $primary-color;
+
+  &:hover {
+    background: $secondary-color;
+  }
+}

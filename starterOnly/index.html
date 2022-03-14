@@ -49,40 +49,40 @@
             </button>
         </div>
     </section>
-    <div class="bground">
+    <div class="modal">
         <div class="content">
             <span class="close"></span>
             <div class="modal-body">
                 <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
                     <div class="formData">
-                      <label>
+                      <label for="first">
                         <span>Prénom</span>
-                        <input class="text-control" type="text" id="first" name="first" minlength="2"/>
                       </label>
+                      <input class="text-control" type="text" id="first" name="first" minlength="2"/>
                     </div>
                     <div class="formData">
-                        <label>
+                        <label for="last">
                           <span>Nom</span>
-                          <input class="text-control" type="text" id="last" name="last"/>
                         </label>
+                        <input class="text-control" type="text" id="last" name="last"/>
                     </div>
                     <div class="formData">
-                        <label>
+                        <label for="email">
                           <span>E-mail</span>
-                          <input class="text-control" type="email" id="email" name="email"/>
                         </label>
+                        <input class="text-control" type="email" id="email" name="email"/>
                     </div>
                     <div class="formData">
-                        <label>
+                        <label for="birthdate">
                           <span>Date de naissance</span>
-                          <input class="text-control" type="date" id="birthdate" name="birthdate"/>
                         </label>
+                        <input class="text-control" type="date" id="birthdate" name="birthdate"/>
                     </div>
                     <div class="formData">
-                        <label>
+                        <label for="quantity">
                           <span>À combien de tournois GameOn avez-vous déjà participé ?</span>
-                          <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                         </label>
+                        <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                     </div>
                     <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
                     <div class="formData">

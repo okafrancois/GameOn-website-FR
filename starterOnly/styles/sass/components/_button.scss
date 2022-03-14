@@ -21,17 +21,13 @@
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s, color 0.3s;
-}
 
-/*
-  • Base --primary
-  ---------- ---------- ---------- ---------- ----------
-*/
+  &.--primary {
+    background: $primary-color;
 
-.button {
-  background: $primary-color;
-
-  &:hover {
-    background: $secondary-color;
+    &:hover {
+      background: $secondary-color;
+    }
   }
 }
+

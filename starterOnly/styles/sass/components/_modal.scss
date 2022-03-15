@@ -7,7 +7,7 @@
 }
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -16,6 +16,10 @@
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+
+  &.--is-open {
+    display: block;
+  }
 }
 
 .content {
@@ -24,7 +28,7 @@
   max-width: 500px;
   animation-name: modalopen;
   animation-duration: $modal-duration;
-  background: #232323;
+  background: $secondary-color;
   border-radius: 10px;
   overflow: hidden;
   position: relative;

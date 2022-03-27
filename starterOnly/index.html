@@ -49,36 +49,36 @@
             </button>
         </div>
     </section>
-    <div class="modal">
+    <div class="modal --is-open">
         <div class="content">
             <span class="close"></span>
             <div class="modal-body">
-                <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
-                    <div class="formData">
+                <form name="reserve" class="modal-form" novalidate>
+                    <div class="formData" data-validator="name" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                       <label for="first">
                         <span>Prénom</span>
                       </label>
-                      <input class="text-control" type="text" id="first" name="first" minlength="2"/>
+                      <input class="text-control" type="text" id="first" name="first" minlength="2">
                     </div>
-                    <div class="formData">
+                    <div class="formData" data-validator="name" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="last">
                           <span>Nom</span>
                         </label>
                         <input class="text-control" type="text" id="last" name="last"/>
                     </div>
-                    <div class="formData">
+                    <div class="formData" data-validator="email" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="email">
                           <span>E-mail</span>
                         </label>
                         <input class="text-control" type="email" id="email" name="email"/>
                     </div>
-                    <div class="formData">
+                    <div class="formData" data-validator="date" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="birthdate">
                           <span>Date de naissance</span>
                         </label>
                         <input class="text-control" type="date" id="birthdate" name="birthdate"/>
                     </div>
-                    <div class="formData">
+                    <div class="formData" data-validator="number" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="quantity">
                           <span>À combien de tournois GameOn avez-vous déjà participé ?</span>
                         </label>
@@ -132,7 +132,7 @@
                         </label>
                         <br>
                     </div>
-                    <input type="submit" class="btn-submit button" value="C'est parti"/>
+                    <input type="submit" class="btn-submit button" value="C'est parti" disabled/>
                 </form>
             </div>
         </div>

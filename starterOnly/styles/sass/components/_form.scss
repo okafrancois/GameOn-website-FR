@@ -24,23 +24,26 @@ input {
 
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.7em;
   color: #e54858;
   display: block;
   margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
+  margin-bottom: 10px;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
 }
 
-.formData[data-error-visible="true"]::after {
-  opacity: 1;
-}
+.formData[data-error-visible="true"] {
+  .text-control {
+    border: 2px solid #e54858;
+    margin-bottom: 5px;
+  }
 
-.formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
+  &::after {
+    opacity: 1;
+  }
 }
 
 /*
@@ -133,6 +136,12 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+
+.modal-form .btn-submit{
+  &:disabled {
+    background-color: lighten($primary-color, 10%);
+  }
 }
 
 /* custom select styles */

@@ -1,5 +1,6 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
+
 /*
   Index
   ---------- ---------- ---------- ---------- ----------
@@ -75,8 +76,8 @@
 
     &__nav {
       position: absolute;
-      top: 150%;
-      right: 0;
+      top: 110%;
+      right: 3%;
       z-index: 999;
     }
 

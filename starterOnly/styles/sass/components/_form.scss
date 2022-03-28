@@ -216,6 +216,7 @@ input {
   position: relative;
   display: flex;
   flex-direction: column;
+
   &__content {
     transition: opacity 0.3s, visibility 0s 0.3s;
   }
@@ -239,9 +240,6 @@ input {
     display: flex;
     align-items: center;
   }
-
-
-
 }
 
 .--is-submitted.modal-form {
@@ -249,6 +247,7 @@ input {
     visibility: hidden;
     opacity: 0;
   }
+
   .modal-form__message {
     visibility: visible;
     opacity: 1;

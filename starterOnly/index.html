@@ -54,38 +54,38 @@
             <span class="close"></span>
             <div class="modal-body">
                 <form name="reserve" class="modal-form" novalidate>
-                    <div class="formData" data-validator="name" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
+                    <div class="formData" data-validator="name" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom." data-error-visible="false">
                       <label for="first">
                         <span>Prénom</span>
                       </label>
-                      <input class="text-control" type="text" id="first" name="first" minlength="2">
+                      <input class="text-control" type="text" id="first" name="first" minlength="2" required>
                     </div>
-                    <div class="formData" data-validator="name" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
+                    <div class="formData" data-validator="name" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom." data-error-visible="false">
                         <label for="last">
                           <span>Nom</span>
                         </label>
-                        <input class="text-control" type="text" id="last" name="last"/>
+                        <input class="text-control" type="text" id="last" name="last" required/>
                     </div>
                     <div class="formData" data-validator="email" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="email">
                           <span>E-mail</span>
                         </label>
-                        <input class="text-control" type="email" id="email" name="email"/>
+                        <input class="text-control" type="email" id="email" name="email" required/>
                     </div>
-                    <div class="formData" data-validator="date" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
+                    <div class="formData" data-validator="date" data-error="Vous devez entrer votre date de naissance." data-error-visible="false">
                         <label for="birthdate">
                           <span>Date de naissance</span>
                         </label>
-                        <input class="text-control" type="date" id="birthdate" name="birthdate"/>
+                        <input class="text-control" type="date" id="birthdate" name="birthdate" required/>
                     </div>
                     <div class="formData" data-validator="number" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
                         <label for="quantity">
                           <span>À combien de tournois GameOn avez-vous déjà participé ?</span>
                         </label>
-                        <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                        <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
                     </div>
-                    <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-                    <div class="formData">
+                    <div class="formData required-check" data-validity="false" data-error="Vous devez choisir une option." data-error-visible="false">
+                        <p class="text-label">Quel tournoi souhaitez-vous participer cette année ?</p>
                         <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                         <label class="checkbox-label" for="location1">
                             <span class="checkbox-icon"></span>
@@ -117,14 +117,14 @@
                             Portland
                         </label>
                     </div>
-
-                    <div class="formData">
+                    <div class="formData required-check" data-validity="true" data-error="Vous devez vérifier que vous acceptez les termes et conditions." data-error-visible="false">
                         <input class="checkbox-input" type="checkbox" id="checkbox1" checked required/>
                         <label class="checkbox2-label" for="checkbox1">
                             <span class="checkbox-icon"></span>
                             J'ai lu et accepté les conditions d'utilisation.
                         </label>
-                        <br>
+                    </div>
+                    <div class="formData">
                         <input class="checkbox-input" type="checkbox" id="checkbox2"/>
                         <label class="checkbox2-label" for="checkbox2">
                             <span class="checkbox-icon"></span>

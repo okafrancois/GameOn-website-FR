@@ -406,7 +406,8 @@ input[data-error]::after {
 }
 
 .modal-form .btn-submit:disabled {
-  background-color: #fe475c;
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 /* custom select styles */

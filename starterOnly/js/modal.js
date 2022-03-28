@@ -83,7 +83,7 @@ menuToggle.addEventListener('click', () => {
 
 const modal = document.querySelector(".modal");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const modalClose = document.querySelector(".modal .close");
+const modalClose = document.querySelectorAll(".modal-close");
 
 // open handler
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
@@ -91,9 +91,11 @@ modalBtn.forEach((btn) => btn.addEventListener("click", () => {
 }));
 
 // close handler
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('--is-open')
-})
+modalClose.forEach(item => {
+  item.addEventListener("click", () => {
+    modal.classList.remove('--is-open')
+  })
+});
 
 /*
   • Form management
@@ -140,14 +142,11 @@ function checkSelectValidity(item) {
 modalForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  modalForm.querySelectorAll(".required-check").forEach((item) => {
-    checkSelectValidity(item);
-  });
-
   if (checkFormValidity()) {
-    modal.classList.remove('--is-open')
+    modalForm.classList.add('--is-submitted');
+  } else {
+    modalForm.classList.remove('--is-submitted');
   }
-
 
   //check validity of inputs
 })

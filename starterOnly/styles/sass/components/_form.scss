@@ -46,13 +46,6 @@ input {
   }
 }
 
-/*
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
-
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -126,7 +119,8 @@ input[data-error]::after {
 }
 
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.modal-form__message-close {
   background: $primary-color;
   display: block;
   margin: 0 auto;
@@ -211,8 +205,52 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 /* custom select end */
 .text-label {
   font-weight: normal;
   font-size: 16px;
+}
+
+.modal-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &__content {
+    transition: opacity 0.3s, visibility 0s 0.3s;
+  }
+
+  &__message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+  }
+
+  &__message-text {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+}
+
+.--is-submitted.modal-form {
+  .modal-form__content {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .modal-form__message {
+    visibility: visible;
+    opacity: 1;
+  }
 }

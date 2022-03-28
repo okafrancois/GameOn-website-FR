@@ -1,4 +1,5 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 /*
   Index
@@ -25,7 +26,7 @@
   height: 100%;
   width: 100%;
   padding: 10px;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
@@ -87,6 +88,17 @@
   }
 }
 
+@include display-on("mobile") {
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+      transform: translateY(150px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 
 /*
   • --is-open styles
@@ -95,4 +107,24 @@
 
 .--is-open.modal {
   display: block;
+}
+
+@include display-on("mobile") {
+    .modal {
+      padding: 0;
+      background: none;
+      bottom: 0;
+      top: initial;
+      align-items: flex-end;
+
+      .content {
+        margin: 0;
+        border-radius: 10px 10px 0 0;
+        max-width: 100%;
+      }
+
+      &.--is-open.modal {
+        display: flex;
+      }
+    }
 }

@@ -202,7 +202,7 @@ footer {
   height: 100%;
   width: 100%;
   padding: 10px;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
@@ -263,6 +263,17 @@ footer {
     opacity: 1;
   }
 }
+@media screen and (max-width: 580px) {
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+      transform: translateY(150px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 /*
   • --is-open styles
   ---------- ---------- ---------- ---------- ----------
@@ -271,6 +282,23 @@ footer {
   display: block;
 }
 
+@media screen and (max-width: 580px) {
+  .modal {
+    padding: 0;
+    background: none;
+    bottom: 0;
+    top: initial;
+    align-items: flex-end;
+  }
+  .modal .content {
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    max-width: 100%;
+  }
+  .modal.--is-open.modal {
+    display: flex;
+  }
+}
 label {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
   font-weight: normal;

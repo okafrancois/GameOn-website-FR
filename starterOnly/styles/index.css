@@ -202,7 +202,6 @@ footer {
   height: 100%;
   width: 100%;
   padding: 10px;
-  overflow: hidden;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
@@ -214,7 +213,6 @@ footer {
   animation-duration: 0.8s;
   background: #232323;
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
   color: #fff;
   padding-top: 10px;
@@ -593,11 +591,20 @@ input {
 }
 
 .hero-headline {
+  position: relative;
+  overflow-x: visible;
   margin-bottom: 2rem;
 }
+.hero-headline::after {
+  content: "";
+  display: block;
+  padding-top: 70%;
+}
 .hero-headline h1 {
+  position: absolute;
+  width: 250%;
+  font-size: 7vw;
   font-weight: bold;
-  font-size: 250%;
 }
 
 .hero-text {
@@ -648,6 +655,16 @@ input {
   }
 
   .hero-headline h1 {
+    font-size: 4.5rem;
+    white-space: normal;
+  }
+
+  .hero-headline::after {
+    display: none;
+  }
+  .hero-headline h1 {
+    position: static;
+    width: 100%;
     font-size: 4.5rem;
     white-space: normal;
   }

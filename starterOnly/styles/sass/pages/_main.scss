@@ -58,11 +58,21 @@
 }
 
 .hero-headline {
+  position: relative;
+  overflow-x: visible;
   margin-bottom: 2rem;
 
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 70%;
+  }
+
   h1 {
+    position: absolute;
+    width: 250%;
+    font-size: 7vw;
     font-weight: bold;
-    font-size: 250%;
   }
 }
 
@@ -118,6 +128,20 @@
   .hero-headline {
 
     h1 {
+      font-size: 4.5rem;
+      white-space: normal;
+    }
+  }
+
+  .hero-headline {
+
+    &::after {
+      display: none;
+    }
+
+    h1 {
+      position: static;
+      width: 100%;
       font-size: 4.5rem;
       white-space: normal;
     }

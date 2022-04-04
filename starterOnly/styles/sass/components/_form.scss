@@ -133,7 +133,7 @@ input {
 }
 
 .modal-form .btn-submit{
-  &:disabled {
+  &.--disabled {
     background-color: gray;
     cursor: not-allowed;
   }

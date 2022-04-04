@@ -19,34 +19,6 @@ const INPUT_REGEX = {
     number: /^\d+$/,
 }
 
-function checkFormValidity() {
-    const formData = document.querySelectorAll(".formData");
-    let formValid = true;
-
-    formData.forEach((item) => {
-        if (item.getAttribute("data-error-visible") === "true") {
-            formValid = false;
-        }
-
-        if (item.getAttribute("data-validity") === "false") {
-            formValid = false;
-        }
-    });
-
-    return formValid;
-}
-
-function updateSubmitButton() {
-    const submitButton = modalForm.querySelector(".btn-submit");
-    let formValid = checkFormValidity();
-
-    if (formValid) {
-        submitButton.removeAttribute("disabled");
-    } else {
-        submitButton.setAttribute("disabled", "true");
-    }
-}
-
 function checkInputValidity(item) {
     let testResult;
     const inputValue = item.value.trim();
@@ -82,6 +54,35 @@ function checkSelectValidity(item) {
     return isValid;
 }
 
+function checkFormValidity() {
+    const formData = document.querySelectorAll(".formData");
+    let formValid = true;
+
+    formData.forEach((item) => {
+        if (item.getAttribute("data-error-visible") === "true") {
+            formValid = false;
+        }
+
+        if (item.getAttribute("data-validity") === "false") {
+            formValid = false;
+        }
+    });
+
+    return formValid;
+}
+
+function updateSubmitButton() {
+    const submitButton = modalForm.querySelector(".btn-submit");
+    let formValid = checkFormValidity();
+
+    console.log(formValid);
+
+    if (formValid) {
+        submitButton.classList.remove("--disabled");
+    } else {
+        submitButton.classList.add("--disabled");
+    }
+}
 /*
   • Mobile navigation handler
   ---------- ---------- ---------- ---------- ----------

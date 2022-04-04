@@ -27,6 +27,16 @@ function checkInputValidity(item) {
 
     testResult = inputRegex.test(inputValue);
 
+    if (regexId === "date" && testResult) {
+        const birthYear = new Date(inputValue).getFullYear();
+        const currentYear = new Date().getFullYear();
+
+        if (currentYear - birthYear < 16) {
+            testResult = false;
+        }
+
+    }
+
     item.parentElement.setAttribute("data-error-visible", `${testResult ? "false" : "true"}`);
 }
 

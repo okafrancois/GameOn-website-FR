@@ -93,7 +93,7 @@ const navigation = document.querySelector('.main-header__nav');
 
 // toggle mobile navigation
 menuToggle.addEventListener('click', () => {
-    navigation.classList.toggle('--on-mobile');
+    navigation.classList.toggle('--is-open');
 })
 
 /*

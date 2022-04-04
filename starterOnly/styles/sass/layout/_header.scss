@@ -93,7 +93,7 @@
       transition: transform 0.3s;
     }
 
-    .--on-mobile.navigation {
+    .--is-open.navigation {
       transform: scale(1);
     }
   }

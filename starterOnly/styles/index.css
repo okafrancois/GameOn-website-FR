@@ -142,7 +142,7 @@ a {
     transform-origin: top right;
     transition: transform 0.3s;
   }
-  .main-header .--on-mobile.navigation {
+  .main-header .--is-open.navigation {
     transform: scale(1);
   }
 }
@@ -178,6 +178,7 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+    font-size: 12px;
   }
 }
 /*
@@ -666,24 +667,22 @@ input {
     display: none;
   }
 
-  .hero-headline h1 {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
-
   .hero-headline::after {
     display: none;
   }
   .hero-headline h1 {
     position: static;
     width: 100%;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     white-space: normal;
   }
 
   .hero-img img {
     border-radius: 10px;
-    margin-top: 40px;
+  }
+
+  .hero-text {
+    font-size: 14px;
   }
 
   .hero-section__container > .btn-signup {

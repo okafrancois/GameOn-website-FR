@@ -330,9 +330,9 @@ input {
   color: #e54858;
   display: block;
   margin-top: 7px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   text-align: left;
-  line-height: 0.3;
+  line-height: 0;
   opacity: 0;
   transition: 0.3s;
 }
@@ -342,6 +342,8 @@ input {
   margin-bottom: 5px;
 }
 .formData[data-error-visible=true]::after {
+  line-height: 1;
+  margin-bottom: 10px;
   opacity: 1;
 }
 

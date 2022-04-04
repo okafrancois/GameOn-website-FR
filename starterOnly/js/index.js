@@ -27,14 +27,7 @@ function checkInputValidity(item) {
 
     testResult = inputRegex.test(inputValue);
 
-    if(inputValue) {
-        if (testResult) {
-            item.parentElement.setAttribute("data-error-visible", "false");
-        } else {
-            item.parentElement.setAttribute("data-error-visible", "true");
-            return false;
-        }
-    }
+    item.parentElement.setAttribute("data-error-visible", `${testResult ? "false" : "true"}`);
 }
 
 function checkSelectValidity(item) {
@@ -49,8 +42,6 @@ function checkSelectValidity(item) {
         item.setAttribute("data-error-visible", "true");
         item.setAttribute("data-validity", "false");
     }
-
-    updateSubmitButton();
     return isValid;
 }
 
@@ -71,18 +62,27 @@ function checkFormValidity() {
     return formValid;
 }
 
+function checkFormInputs() {
+    modalForm.querySelectorAll(".text-control").forEach((item) => {
+        checkInputValidity(item);
+        updateSubmitButton();
+    });
+
+    // check select input validity
+    modalForm.querySelectorAll(".required-check").forEach((item) => {
+        checkSelectValidity(item);
+        updateSubmitButton();
+    });
+}
+
 function updateSubmitButton() {
     const submitButton = modalForm.querySelector(".btn-submit");
-    let formValid = checkFormValidity();
+    const formValid = checkFormValidity();
 
-    console.log(formValid);
-
-    if (formValid) {
-        submitButton.classList.remove("--disabled");
-    } else {
-        submitButton.classList.add("--disabled");
-    }
+    //remove or add --disabled class if form is valid or not
+    submitButton.classList[formValid ? "remove" : "add"]("--disabled");
 }
+
 /*
   • Mobile navigation handler
   ---------- ---------- ---------- ---------- ----------
@@ -145,9 +145,10 @@ if (modalForm) {
 modalForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    if (checkFormValidity()) {
-        modalForm.classList.add('--is-submitted');
-    } else {
-        modalForm.classList.remove('--is-submitted');
-    }
+    //remove or add --is-submitted class if form is valid or not
+    modalForm.classList[checkFormValidity() ? "add" : "remove"]("--is-submitted");
+})
+
+modalForm.querySelector(".btn-submit.--disabled").addEventListener("click", () => {
+    checkFormInputs();
 })

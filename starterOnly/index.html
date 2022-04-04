@@ -45,35 +45,35 @@
             <div class="modal-body">
                 <form name="reserve" class="modal-form" novalidate>
                     <div class="modal-form__content">
-                        <div class="formData" data-validator="name" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom." data-error-visible="false">
+                        <div class="formData" data-validator="name" data-error="Veuillez entrer au moins 2 caractères, les caractères spéciaux et les chiffres ne sont pas autorisés." data-error-visible="false">
                             <label for="first">
                                 <span>Prénom</span>
                             </label>
                             <input class="text-control" type="text" id="first" name="first" minlength="2" required>
                         </div>
-                        <div class="formData" data-validator="name" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom." data-error-visible="false">
+                        <div class="formData" data-validator="name" data-error="Veuillez entrer au moins 2 caractères, les caractères spéciaux et les chiffres ne sont pas autorisés." data-error-visible="false">
                             <label for="last">
                                 <span>Nom</span>
                             </label>
                             <input class="text-control" type="text" id="last" name="last" required/>
                         </div>
-                        <div class="formData" data-validator="email" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
+                        <div class="formData" data-validator="email" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés." data-error-visible="false">
                             <label for="email">
                                 <span>E-mail</span>
                             </label>
                             <input class="text-control" type="email" id="email" name="email" required/>
                         </div>
-                        <div class="formData" data-validator="date" data-error="Vous devez entrer votre date de naissance." data-error-visible="false">
+                        <div class="formData" data-validator="date" data-error="Vous n'êtes pas un peu trop jeune ? Ou peut-être un robot 🤖 ?" data-error-visible="false">
                             <label for="birthdate">
                                 <span>Date de naissance</span>
                             </label>
                             <input class="text-control" type="date" id="birthdate" name="birthdate" required/>
                         </div>
-                        <div class="formData" data-validator="number" data-error="Les caractères spéciaux et les chiffres ne sont pas autorisés" data-error-visible="false">
+                        <div class="formData" data-validator="number" data-error="Veuillez entrer 0 si vous n'avez participé à aucun événement." data-error-visible="false">
                             <label for="quantity">
                                 <span>À combien de tournois GameOn avez-vous déjà participé ?</span>
                             </label>
-                            <input type="number" class="text-control" id="quantity" name="quantity" value="0" min="0" max="99" required>
+                            <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
                         </div>
                         <div class="formData required-check" data-validity="false" data-error="Vous devez choisir une option." data-error-visible="false">
                             <p class="text-label">Quel tournoi souhaitez-vous participer cette année ?</p>
